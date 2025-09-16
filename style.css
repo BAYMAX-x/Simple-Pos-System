@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+/* Auth page subtle gradient */
+.auth-page {
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f7ff 40%, #eef6ff 100%);
+}
+
+/* Login */
+.login-container {
+  /* keep existing responsive sizing but allow bootstrap card spacing */
+  width: clamp(340px, 42vw, 560px);
+  max-width: 95%;
+  margin: 6vh auto;
+  padding: 0; /* use card body padding instead */
+  background: transparent;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* card body inside login container */
+.login-card-body {
+  padding: 28px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(18, 38, 63, 0.1);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  background: #d4edda;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* small-screen tweak to reduce padding */
+@media (max-width: 420px) {
+  .login-container {
+    padding: 16px;
+    border-radius: 8px;
+  }
+}
+
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.sidebar {
+  width: 260px;
+  background: #1a73e8;
+  color: #fff;
+  padding: 24px;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.sidebar h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.main {
+  margin-left: 260px; /* match sidebar width */
+  padding: 28px;
+  flex: 1;
+  min-height: 100vh;
+  overflow-y: auto;
+  background: transparent;
+}
+
+/* Table responsiveness */
+.table-responsive {
+  overflow-x: auto;
+  background: transparent;
+  margin: 18px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  min-width: 720px;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+/* Sticky table header for better scanning */
+.table-sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* better table spacing when using bootstrap table classes */
+.table-responsive table th,
+.table-responsive table td {
+  vertical-align: middle;
+}
+
+/* Forms & cards */
+form,
+.card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 18px;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+button:hover {
+  background: #1557b0;
+}
+
+/* Minor utility spacing */
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/* Products container on invoice page */
+#products-container {
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e9eef6;
+  background: #fff;
+}
+
+#products-container > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Fix small screens */
+@media (max-width: 880px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .main {
+    margin-left: 0;
+    padding: 16px;
+  }
+  table {
+    min-width: 640px;
+  }
+}
