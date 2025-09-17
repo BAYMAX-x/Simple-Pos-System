@@ -45,7 +45,7 @@ $totalRevenue = $conn->query("SELECT IFNULL(SUM(total),0) AS s FROM invoices")->
 
         <div class="main">
             <div class="d-flex justify-content-between align-items-center mb-2 flex-wrap gap-2">
-                <h1 class="h4 mb-0">Dashboard.........</h1>
+                <h1 class="h4 mb-0">Dashboard</h1>
                 <span class="text-muted small">Updated <?php echo date('M j, Y g:i A'); ?></span>
             </div>
 
